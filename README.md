@@ -2,12 +2,12 @@
 
 -- DEV MODE --
 
-- *Docker*: if you want to run watching changes use "export APP_ENV=dev && docker-compose up"
-- *Normal Execution*: yarn dev
+- *Docker*: if you want to run watching changes use ```export APP_ENV=dev && docker-compose up```
+- *Normal Execution*: ```yarn dev```
 
 -- PROD MODE --
-- *Docker*: to run the server in a production environment you need to run "export APP_ENV=prod && docker-compose up"
-- *Normal Execution*: yarn prod
+- *Docker*: to run the server in a production environment you need to run ```export APP_ENV=prod && docker-compose up```
+- *Normal Execution*: ```yarn prod```
 
 -- TEST --
 - use yarn test
