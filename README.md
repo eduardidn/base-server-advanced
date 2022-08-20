@@ -2,7 +2,10 @@
 
 -- DEV MODE --
 
-- *Docker*: if you want to run watching changes use ```export APP_ENV=dev && docker-compose up```
+- *Docker*: if you want to run watching changes use 
+```
+export APP_ENV=dev && docker-compose up
+```
 - *Normal Execution*: ```yarn dev```
 
 -- PROD MODE --
