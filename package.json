@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "export PORT=3001 && export APP_ENV=test && jest --watch",
-    "start": "export APP_ENV=dev yarn build && node build/main.js",
-    "dev": "export APP_ENV=prod nodemon",
+    "start": "export APP_ENV=prod && yarn build && node build/main.js",
+    "dev": "export APP_ENV=dev && nodemon",
     "build": "yarn build:clean && tsc",
     "build:clean": "rimraf build",
     "lint:fix": "eslint . --ext .ts --fix",
