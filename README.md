@@ -7,10 +7,10 @@
 
 -- PROD MODE --
 - *Docker*: to run the server in a production environment you need to run "export APP_ENV=prod && docker-compose up"
-- *Normal Execution*: yarn dev
+- *Normal Execution*: yarn prod
 
 -- TEST --
-- use yarn test test
+- use yarn test
 
 ----------------------------------------------------------------
 
