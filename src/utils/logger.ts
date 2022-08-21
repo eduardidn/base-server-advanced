@@ -10,7 +10,23 @@ const winstonConfig = {
 
 const transports = [new winston.transports.Console(winstonConfig)];
 
-export const logger = winston.createLogger({
+const morganConfig = () => {
+  if (process.env.APP_ENV === 'dev') {
+    return {
+      format: 'dev',
+      parse: (message) => new Date().toISOString() + ' ' + message.trim()
+    };
+  } else {
+    return {
+      format: 'combined',
+      parse: (message) => message.trim()
+    };
+  }
+};
+
+const baseLogger = winston.createLogger({
   transports,
   exitOnError: false
 });
+
+export const logger = Object.assign(baseLogger, { morganConfig });

@@ -5,6 +5,7 @@ import cors from 'cors';
 import http from 'http';
 import { logger } from './logger';
 import { TokenValitation } from './middlewares';
+import morgan from 'morgan';
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -21,6 +22,14 @@ app
     urlencoded({
       extended: true,
       limit: '20mb'
+    })
+  )
+  .use(
+    morgan(logger.morganConfig().format, {
+      stream: {
+        write: (info) => logger.info(logger.morganConfig().parse(info))
+      },
+      skip: (req) => req.method === 'OPTIONS'
     })
   )
   .use(TokenValitation)
